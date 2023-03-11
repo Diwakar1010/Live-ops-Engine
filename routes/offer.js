@@ -30,9 +30,9 @@ router.post("/list", async(req, res)=> {
                 let ruleKey = {}
                 if(rule.includes(">")) {
                     ruleKey = {key: rule.trim().split(">")[0].trim(), value: parseInt(rule.trim().split(">")[1]) }
-                    console.log(req.body[ruleKey.key])
                     if(req.body[ruleKey.key] > ruleKey.value) {
                         validOffers.push(offer)
+                        console.log()
                     }
                     
                 } else {
